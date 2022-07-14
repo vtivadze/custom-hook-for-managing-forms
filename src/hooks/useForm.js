@@ -62,7 +62,7 @@ function useForm(formObj) {
     return isValid;
   }, [form]);
 
-  return { renderFormInputs };
+  return { renderFormInputs, isFormValid };
 }
 
 export default useForm;
