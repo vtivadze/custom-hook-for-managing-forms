@@ -9,7 +9,7 @@ import Input from '../components/Input';
  * @param {string} type - input type
  * @param {string} defaultValue - default value for the input
  */
-function createFormFieldConfig(label, name, type, defaultValue = '') {
+export function createFormFieldConfig(label, name, type, defaultValue = '') {
   return {
     renderInput: (handleChange, value, isValid, error, key) => {
       return (
@@ -33,4 +33,18 @@ function createFormFieldConfig(label, name, type, defaultValue = '') {
   };
 }
 
-export default createFormFieldConfig;
+// object representation of signup form
+export const signupForm = {
+  name: {
+    ...createFormFieldConfig('Full Name', 'name', 'text'),
+  },
+  email: {
+    ...createFormFieldConfig('Email', 'email', 'email'),
+  },
+  password: {
+    ...createFormFieldConfig('Password', 'password', 'password'),
+  },
+  confirmPassword: {
+    ...createFormFieldConfig('Confirm Password', 'confirmPassword', 'password'),
+  },
+};
