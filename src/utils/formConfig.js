@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from '../components/Input';
+import Input from '../components/input/input';
 
 /**
  * creates and returns object representation of form field

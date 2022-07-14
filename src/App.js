@@ -1,9 +1,9 @@
-import './App.css';
+import SignupForm from './components/signupForm/signupForm';
 
 function App() {
   return (
     <div className="App">
-      <h2>Custom Hook for Managin Forms</h2>
+      <SignupForm />
     </div>
   );
 }
