@@ -48,6 +48,20 @@ function useForm(formObj) {
     setForm({ ...form, [name]: inputObj });
   }, [form, isInputFieldValid]);
 
+  const isFormValid = useCallback(() => {
+    let isValid = true;
+    const arr = Object.values(form);
+  
+    for (let i = 0; i < arr.length; i++) {
+      if (!arr[i].valid) {
+        isValid = false;
+        break;
+      }
+    }
+  
+    return isValid;
+  }, [form]);
+
   return { renderFormInputs };
 }
 
