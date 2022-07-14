@@ -10,6 +10,20 @@ function useForm(formObj) {
     });
   }
 
+  const isInputFieldValid = useCallback(
+    (inputField) => {
+      for (const rule of inputField.validationRules) {
+        if (!rule.validate(inputField.value, form)) {
+          inputField.errorMessage = rule.message;
+          return false;
+        }
+      }
+  
+      return true;
+    },
+    [form]
+  );
+
   const onInputChange = useCallback((event) => {
     const { name, value } = event.target;
     // copy input object whose value was changed
